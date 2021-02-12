@@ -8,7 +8,7 @@ RUN dotnet restore -r $arch "./CLIExample.csproj"
 COPY . .
 RUN dotnet publish "CLIExample.csproj" --no-restore -r $arch -c Release -o /app/publish /p:InvariantGlobalization=true
 
-FROM ubuntu:20.04 as final
+FROM debian:buster-slim as final
 WORKDIR /app
 COPY --from=publish /app/publish/CLIExample ./CLIExample
 ENTRYPOINT ["./CLIExample"]
