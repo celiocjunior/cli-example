@@ -6,12 +6,12 @@ This project is a .NET console app that behaves like a CLI and it uses ahead of 
 
 Build the `Dockerfile`:
 ```bash
-docker build -t cli-example .
+docker build --rm -t cli-example .
 ```
 
 Run the container:
 ```bash
-docker container run --rm cli-example
+docker container run --rm cli-example help
 ```
 
 ## Reference
